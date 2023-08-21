@@ -17,29 +17,41 @@ const btnGoHome = document.getElementById("go-home");
 
 // sportwear section card event listener
 sportswearCardOne.addEventListener("click", function () {
+  const productTitle = document.getElementById("sports-title").innerText;
+  showProductTitle(productTitle);
   const productPrice = getProductPrice("sports-cap");
   addProductPrice(productPrice);
 });
 
 sportswearCardTwo.addEventListener("click", function () {
+  const productTitle = document.getElementById("jersey-title").innerText;
+  showProductTitle(productTitle);
   const productPrice = getProductPrice("jersey-set");
   addProductPrice(productPrice);
 });
 sportswearCardThree.addEventListener("click", function () {
+  const productTitle = document.getElementById("cates-title").innerText;
+  showProductTitle(productTitle);
   const productPrice = getProductPrice("sports-cate");
   addProductPrice(productPrice);
 });
 
 // furniture section card event listener
 furnitureCardOne.addEventListener("click", function () {
+  const productTitle = document.getElementById("relax-chair-title").innerText;
+  showProductTitle(productTitle);
   const productPrice = getProductPrice("relax-chair");
   addProductPrice(productPrice);
 });
 furnitureCardTwo.addEventListener("click", function () {
+  const productTitle = document.getElementById("play-title").innerText;
+  showProductTitle(productTitle);
   const productPrice = getProductPrice("play");
   addProductPrice(productPrice);
 });
 furnitureCardThree.addEventListener("click", function () {
+  const productTitle = document.getElementById("sofa-title").innerText;
+  showProductTitle(productTitle);
   const productPrice = getProductPrice("sofa");
   addProductPrice(productPrice);
 });
@@ -88,6 +100,16 @@ btnApply.addEventListener("click", function () {
   //    clear input field
   couponInputField.value = "";
 });
+
+// show product title
+function showProductTitle(productTitle) {
+  console.log(productTitle);
+  const productTitleLists = document.getElementById("product-title-lists");
+  const count = productTitleLists.childElementCount;
+  const li = document.createElement("li");
+  li.innerText = `${count + 1}. ${productTitle}`;
+  productTitleLists.appendChild(li);
+}
 
 // setElement Inner Text
 function setElementInnerText(elementId, price) {
